@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Редагування</title>
+</head>
+<body>
+<h1 class = "title">Редагувати постачальника</h1>
+<form action="" method="POST" >
+    <div class="form-group">
+        <div class="form-group">
+            Код постачальника
+            <input type="number" placeholder="id" class="form-control" id="code_provider" name="code_provider" min="1"
+                   value= <%= Providers[0].code_provider %>
+            >
+        </div>
+        <div class="form-group">
+            Назва відділу
+            <input type="text" class="form-control"  placeholder="Назва"  id="name_provider"   name="name_provider"
+                   style="width:300px"  value= "<%= Providers[0].name_provider %>"
+            >
+        </div>
+        <div class="form-group">
+            Власник постачальника
+            <input type="text" class="form-control"  placeholder="Власник"  id="owner"   name="owner"
+                   style="width:300px"  value= "<%= Providers[0].owner %>"
+            >
+        </div>
+        <div class="form-group">
+            Електронна пошта постачальника
+            <input type="email" class="form-control"  placeholder="Електронна пошта"  id="email"   name="email"
+                   style="width:300px"  value= "<%= Providers[0].email %>"
+            >
+        </div>
+    </div>
+    <button type="submit"  formaction="/api/providers/put/<%=  Providers[0].code_provider %>" class="btn btn-primary">
+        Редагувати</button>
+</form>
+
+<a class="btn btn-primary marg-t-b-container" href="/api/providers">Повернутися</a>
+
+</body>
+</html>
